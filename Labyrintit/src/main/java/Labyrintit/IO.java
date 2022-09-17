@@ -1,3 +1,5 @@
+package Labyrintit;
+
 
 public interface IO {
     int nextInt();

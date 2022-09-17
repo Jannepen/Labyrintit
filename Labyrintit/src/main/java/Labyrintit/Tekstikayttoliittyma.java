@@ -1,3 +1,5 @@
+package Labyrintit;
+
 import java.util.*;
 
 

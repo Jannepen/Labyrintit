@@ -1,3 +1,6 @@
+package Labyrintit;
+
+import Labyrintit.Tekstikayttoliittyma;
 import java.util.*;
 
 
