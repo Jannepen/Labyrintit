@@ -16,12 +16,12 @@ plugins {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'Main'
+        attributes 'Main-Class': 'Labyrintit.Main'
     }
 }
 
 application {
-    mainClass = 'Main'
+    mainClass = 'Labyrintit.Main'
 }
 
 
