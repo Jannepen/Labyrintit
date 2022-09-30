@@ -13,6 +13,9 @@ plugins {
     id 'checkstyle'
 }
 
+checkstyle {
+    toolVersion '8.17';
+}
 
 jar {
     manifest {

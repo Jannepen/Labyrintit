@@ -25,6 +25,8 @@ public class Tekstikayttoliittyma {
         switch(komento) {
             case 1:
                 io.print("Luodaan labyrinttia");
+                SatunnainenKruskal kruskal = new SatunnainenKruskal();
+                kruskal.luoLabyrintti(5, 5);
                 break;
             case 2:
                 io.print("Luodaan labyrinttia");
