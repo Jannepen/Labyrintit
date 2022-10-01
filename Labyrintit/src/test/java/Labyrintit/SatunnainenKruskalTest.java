@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Labyrintit;
 
 import org.junit.After;
@@ -12,29 +8,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author jannepen
- */
 public class SatunnainenKruskalTest {
-    
-    public SatunnainenKruskalTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
+
     @Before
     public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+        SatunnainenKruskal kruskal = new SatunnainenKruskal();
+        Verkko verkko = new Verkko(25);
+        Kaari kaari = new Kaari(0,1);
     }
     
 }

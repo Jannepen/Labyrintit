@@ -14,7 +14,7 @@ plugins {
 }
 
 checkstyle {
-    toolVersion '8.17';
+    checkstyleTest.enabled = false
 }
 
 jar {

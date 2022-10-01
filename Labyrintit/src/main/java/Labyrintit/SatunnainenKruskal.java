@@ -4,17 +4,30 @@ package Labyrintit;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Tämä luokka luo labyrintin käyttäen satunnaista Kruskalin algoritmia
+ * Labyrintille ei ole vielä luotu visualisointia, ohjelman ajettua verkon olio kaaret sisältää labyrintin lopulliset seinät
+ */
+
 public class SatunnainenKruskal {
     
+    /**
+     * Kaaret ovat labyrintin seiniä
+     */
+    
     private static class Kaari {
-        private final int alku;
-        private final int loppu;
+        private int alku;
+        private int loppu;
     
         public Kaari(int alku, int loppu) {
             this.alku = alku;
             this.loppu = loppu;
         }
     }
+    
+    /**
+     * 
+     */
     
     private static class Verkko {
             private int solujenMaara;
@@ -24,6 +37,10 @@ public class SatunnainenKruskal {
                 this.solujenMaara = solut;
                 this.kaaret = new ArrayList<>();
             }
+            
+            /**
+             * Poistaa seiniä käyttäen etsi-yhdistä tietorakennetta (union find)
+             */
             
             public void luoVerkko() {
                 
@@ -47,6 +64,13 @@ public class SatunnainenKruskal {
                 }
             }
             
+            /**
+             * Etsii annetun solmun juuren
+             * @param vanhempi
+             * @param solmu
+             * @return palauttaa juuren arvon
+             */
+            
             private int etsi(int[] vanhempi, int solmu) {
                 if (vanhempi[solmu] != solmu) {
                     return etsi(vanhempi, vanhempi[solmu]);
@@ -55,17 +79,35 @@ public class SatunnainenKruskal {
                 }
             }
             
+            /**
+             * Yhdistää kaksi joukkoa (sen jälkeen, kun niiden välistä poistettu seinä)
+             * @param vanhempi
+             * @param a
+             * @param b 
+             */
+            
             private void yhdista(int[] vanhempi, int a, int b) {
                 int aVanhempi = etsi(vanhempi, a);
                 int bVanhempi = etsi(vanhempi, b);
                 vanhempi[bVanhempi] = aVanhempi;
             }
             
+            /**
+             * Alustaa oman joukon jokaiselle solmulle
+             * @param vanhempi 
+             */
+            
             private void alustaVanhemmat(int[] vanhempi) {
                 for (int i = 0; i < vanhempi.length; i++) {
                     vanhempi[i] = i;
                 }
             }
+            
+            /**
+             * Lisää kaaren verkkoon
+             * @param alku
+             * @param loppu 
+             */
             
             private void lisaaKaari(int alku, int loppu) {
                 Kaari kaari = new Kaari(alku, loppu);
@@ -74,6 +116,11 @@ public class SatunnainenKruskal {
             
     }
     
+    /**
+     * Alustaa ruudukon labyrintin tekoa varten, jonka jälkeen seiniä poistamalla luo labyrintin
+     * @param x
+     * @param y
+     */
     public void luoLabyrintti(int x, int y) {
         int solujenMaara = x*y;
         
