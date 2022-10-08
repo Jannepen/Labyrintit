@@ -11,3 +11,5 @@
 [Viikko 2](https://github.com/Jannepen/Labyrintit/blob/main/Dokumentaatio/Viikkoraportit/Viikkoraportti2.md)
 
 [Viikko 3](https://github.com/Jannepen/Labyrintit/blob/main/Dokumentaatio/Viikkoraportit/Viikkoraportti3.md)
+
+[Viikko 4](https://github.com/Jannepen/Labyrintit/blob/main/Dokumentaatio/Viikkoraportit/Viikkoraportti4.md)
