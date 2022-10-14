@@ -30,6 +30,8 @@ public class Tekstikayttoliittyma {
                 break;
             case 2:
                 io.print("Luodaan labyrinttia");
+                SatunnainenPrim prim = new SatunnainenPrim(10,10);
+                prim.luoLabyrintti();
                 break;
             case 3:
                 this.poistumisTila = true;
