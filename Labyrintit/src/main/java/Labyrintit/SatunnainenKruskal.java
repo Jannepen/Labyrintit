@@ -42,7 +42,7 @@ public class SatunnainenKruskal {
              * Poistaa seiniä käyttäen etsi-yhdistä tietorakennetta (union find)
              */
             
-            public void luoVerkko() {
+            public int[][] luoVerkko(int[][] labyrintti) {
                 
                 int[] vanhempi = new int[solujenMaara];
                 
@@ -51,17 +51,35 @@ public class SatunnainenKruskal {
                 Random random = new Random();
                 
                 int indeksi = 0;
-                while (indeksi < solujenMaara - 1) {
+                while (!kaaret.isEmpty()) {
                     int randomKaari = random.nextInt(kaaret.size());
                     Kaari kaari = kaaret.remove(randomKaari);
                     
                     int aVanhempi = etsi(vanhempi, kaari.alku);
                     int bVanhempi = etsi(vanhempi, kaari.loppu);
                     if (aVanhempi != bVanhempi) {
+                        poistaSeina(labyrintti, kaari.alku, kaari.loppu);
+                        System.out.print(kaari.alku + " ");
+                        System.out.println(kaari.loppu);
                         yhdista(vanhempi, aVanhempi, bVanhempi);
                     }
                     indeksi++;
                 }
+                return labyrintti;
+            }
+            
+            private int[][] poistaSeina(int[][] labyrintti, int alku, int loppu) {
+                int koko = (labyrintti.length + 1) / 2;
+
+                int x = alku % koko;
+                int y = (alku - x) / koko;
+                if (alku + 1 == loppu) {
+                    labyrintti[x * 2 + 1][y * 2] = 1;
+                } else {
+                    labyrintti[x * 2][y * 2 + 1] = 1;
+                }
+                
+                return labyrintti;
             }
             
             /**
@@ -121,8 +139,12 @@ public class SatunnainenKruskal {
      * @param x
      * @param y
      */
-    public void luoLabyrintti(int x, int y) {
+    public int[][] luoLabyrintti(int x, int y) {
         int solujenMaara = x*y;
+        
+        int[][] labyrintti = new int[x + x - 1][y + y - 1];
+        
+        alustaLabyrintti(labyrintti);
         
         Verkko verkko = new Verkko(solujenMaara);
         
@@ -138,7 +160,20 @@ public class SatunnainenKruskal {
                 luku++;
             }
         }
-        verkko.luoVerkko();
+        verkko.luoVerkko(labyrintti);
+        
+        return labyrintti;
+    }
+    
+    private int[][] alustaLabyrintti(int[][] labyrintti) {
+        
+        for (int i = 0; i < labyrintti.length; i +=2) {
+            for (int j = 0; j < labyrintti.length; j += 2) {
+                labyrintti[i][j] = 1;
+            }
+        }
+        
+        return labyrintti;
     }
     
 }

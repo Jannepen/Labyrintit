@@ -11,18 +11,18 @@ import java.util.Random;
  */
 
 public class SatunnainenPrim {
-    private boolean ruudukko[][];
+    private int ruudukko[][];
     private int leveys;
     private int korkeus;
     
     public SatunnainenPrim(int leveys, int korkeus) {
         this.leveys = leveys;
         this.korkeus = korkeus;
-        this.ruudukko = new boolean[leveys][korkeus];
+        this.ruudukko = new int[leveys][korkeus];
     }
     
-    public void luoLabyrintti() {
-        LinkedList<int[]> tunnelit = new LinkedList<>();
+    public int[][] luoLabyrintti() {
+        ArrayList<int[]> tunnelit = new ArrayList<>();
         Random r = new Random();
         
         int x = r.nextInt(leveys);
@@ -30,31 +30,34 @@ public class SatunnainenPrim {
         int[] alkutunneli = new int[]{x,y,x,y};
         tunnelit.add(alkutunneli);
         
+        int alkux = x;
+        int alkuy = y;
+        
         while (!tunnelit.isEmpty()) {
             int[] tunneli = tunnelit.remove(r.nextInt(tunnelit.size()));
             x = tunneli[2];
             y = tunneli[3];
             
-            if (ruudukko[x][y] == false) {
-                ruudukko[tunneli[0]][tunneli[1]] = true;
-                ruudukko[x][y] = true;
+            if (ruudukko[x][y] == 0) {
+                ruudukko[tunneli[0]][tunneli[1]] = 1;
+                ruudukko[x][y] = 1;
                 
-                if (y >= 2 && ruudukko[x][y-2] == false) {
+                if (y >= 2 && ruudukko[x][y-2] == 0) {
                     int[] uusiTunneli = new int[]{x,y-1,x,y-2};
                     tunnelit.add(uusiTunneli);
                 }
                 
-                if (y < korkeus - 2 && ruudukko[x][y+2] == false) {
+                if (y < korkeus - 2 && ruudukko[x][y+2] == 0) {
                     int[] uusiTunneli = new int[]{x,y+1,x,y+2};
                     tunnelit.add(uusiTunneli);
                 }
                 
-                if (x >= 2 && ruudukko[x-2][y] == false) {
+                if (x >= 2 && ruudukko[x-2][y] == 0) {
                     int[] uusiTunneli = new int[]{x-1,y,x-2,y};
                     tunnelit.add(uusiTunneli);
                 }
                 
-                if (x < korkeus - 2 && ruudukko[x+2][y] == false) {
+                if (x < korkeus - 2 && ruudukko[x+2][y] == 0) {
                     int[] uusiTunneli = new int[]{x+1,y,x+2,y};
                     tunnelit.add(uusiTunneli);
                 }
@@ -62,6 +65,9 @@ public class SatunnainenPrim {
             }
         }
         
+        ruudukko[alkux][alkuy] = 4;
+        
+        return ruudukko;
     }
     
     

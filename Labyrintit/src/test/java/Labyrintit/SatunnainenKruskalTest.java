@@ -13,8 +13,8 @@ public class SatunnainenKruskalTest {
     @Before
     public void setUp() {
         SatunnainenKruskal kruskal = new SatunnainenKruskal();
-        Verkko verkko = new Verkko(25);
-        Kaari kaari = new Kaari(0,1);
+//        Verkko verkko = new Verkko(25);
+//        Kaari kaari = new Kaari(0,1);
     }
     
 }
