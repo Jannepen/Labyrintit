@@ -44,7 +44,7 @@ public class Verkko {
         return labyrintti;
     }
             
-    private int[][] poistaSeina(int[][] labyrintti, int alku, int loppu) {
+    public int[][] poistaSeina(int[][] labyrintti, int alku, int loppu) {
         int koko = (labyrintti.length + 1) / 2;
         
         int x = alku % koko;
@@ -57,6 +57,10 @@ public class Verkko {
                
         return labyrintti;
     }
+
+    public ArrayList<Kaari> getKaaret() {
+        return kaaret;
+    }
             
     /**
      * Etsii annetun solmun juuren
@@ -65,7 +69,7 @@ public class Verkko {
      * @return palauttaa juuren arvon
      */
             
-    private int etsi(int[] vanhempi, int solmu) {
+    public int etsi(int[] vanhempi, int solmu) {
         if (vanhempi[solmu] != solmu) {
             return etsi(vanhempi, vanhempi[solmu]);
         } else {
@@ -80,7 +84,7 @@ public class Verkko {
      * @param b 
      */
             
-    private void yhdista(int[] vanhempi, int a, int b) {
+    public void yhdista(int[] vanhempi, int a, int b) {
         int aVanhempi = etsi(vanhempi, a);
         int bVanhempi = etsi(vanhempi, b);
         vanhempi[bVanhempi] = aVanhempi;
@@ -91,7 +95,7 @@ public class Verkko {
      * @param vanhempi 
      */
             
-    private void alustaVanhemmat(int[] vanhempi) {
+    public void alustaVanhemmat(int[] vanhempi) {
         for (int i = 0; i < vanhempi.length; i++) {
             vanhempi[i] = i;
         }

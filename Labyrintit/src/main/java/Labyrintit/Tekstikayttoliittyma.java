@@ -19,24 +19,13 @@ public class Tekstikayttoliittyma {
     
     public void aloita() {
         io.print("Tervetuloa labyrintinluontiohjelmaan! Valitse toiminto: \n" + 
-                "1) Luo labyrintti Kruskalin algoritmilla \n" + 
-                "2) Luo labyrintti Primin algoritmilla \n" + 
+                "1) Luo labyrintti Primin algoritmilla \n" + 
+                "2) Luo labyrintti Kruskalin algoritmilla \n" + 
                 "3) Poistu");
         int komento = io.nextInt();
         
         switch(komento) {
             case 1:
-                io.print("Anna labyrintin koko:");
-                int kruskalKoko = io.nextInt();
-                if (kruskalKoko > 2) {
-                    io.print("Luodaan labyrinttia");
-                    SatunnainenKruskal kruskal = new SatunnainenKruskal();
-                    tulostaLabyrintti(kruskal.luoLabyrintti((kruskalKoko + 1) / 2, (kruskalKoko + 1) / 2));
-                } else {
-                    io.print("Virheellinen koko");
-                }
-                break;
-            case 2:
                 io.print("Anna labyrintin koko:");
                 int primKoko = io.nextInt();
                 if (primKoko > 2) {
@@ -46,6 +35,17 @@ public class Tekstikayttoliittyma {
                     tulostaLabyrintti(labyrintti);
                 } else {
                     System.out.println("Virheellinen koko");
+                }
+                break;
+            case 2:
+                io.print("Anna labyrintin koko:");
+                int kruskalKoko = io.nextInt();
+                if (kruskalKoko > 2) {
+                    io.print("Luodaan labyrinttia");
+                    SatunnainenKruskal kruskal = new SatunnainenKruskal();
+                    tulostaLabyrintti(kruskal.luoLabyrintti((kruskalKoko + 1) / 2, (kruskalKoko + 1) / 2));
+                } else {
+                    io.print("Virheellinen koko");
                 }
                 break;
             case 3:
