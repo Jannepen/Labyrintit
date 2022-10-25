@@ -1,5 +1,5 @@
 
-package Labyrintit;
+package Labyrintit.Prim;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

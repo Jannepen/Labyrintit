@@ -1,5 +1,7 @@
 package Labyrintit;
 
+import Labyrintit.Prim.SatunnainenPrim;
+import Labyrintit.Kruskal.SatunnainenKruskal;
 import java.util.*;
 
 
