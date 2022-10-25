@@ -2,6 +2,8 @@
 
 ## Dokumentaatio
 
+[Käyttöohje](https://github.com/Jannepen/Labyrintit/blob/main/Dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
+
 [Määrittelydokumentti](https://github.com/Jannepen/Labyrintit/blob/main/Dokumentaatio/M%C3%A4%C3%A4rittelydokumentti.md)
 
 ## Viikkoraportit
