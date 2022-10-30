@@ -8,6 +8,8 @@
 
 [Testausdokumentti](https://github.com/Jannepen/Labyrintit/blob/main/Dokumentaatio/Testausdokumentti.md)
 
+[Toteutusdokumentti](https://github.com/Jannepen/Labyrintit/blob/main/Dokumentaatio/Toteutusdokumentti.md)
+
 ## Viikkoraportit
 
 [Viikko 1](https://github.com/Jannepen/Labyrintit/blob/main/Dokumentaatio/Viikkoraportit/Viikkoraportti1.md)
