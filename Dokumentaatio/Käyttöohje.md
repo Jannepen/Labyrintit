@@ -8,7 +8,7 @@ Kloonaa repositorio omalle koneellesi
    
 ## Ohjelman suorittaminen
 
-Ohjelman toimivuus testattu linux-käyttöjärjestelmällä. Gradle komento saattaa olla eri toisillä käyttöjärjestelmillä.
+Ohjelman toimivuus testattu linux-käyttöjärjestelmällä. Gradle komento saattaa olla eri toisilla käyttöjärjestelmillä.
 
 1. Mene repositorioon jossa ohjelma sijaitsee. Rakenna projekti
    `./gradlew build`   
