@@ -6,8 +6,7 @@ import java.util.Random;
 
 /**
  * Tämä luokka luo labyrintin käyttäen satunnaista Kruskalin algoritmia
- * Labyrintille ei ole vielä luotu visualisointia, 
- * ohjelman ajettua verkon olio kaaret sisältää labyrintin lopulliset seinät
+ * Luokka käyttää hyväksi luokkia Kaari sekä Verkko
  */
 
 public class SatunnainenKruskal {

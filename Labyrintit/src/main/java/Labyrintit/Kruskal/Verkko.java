@@ -35,8 +35,6 @@ public class Verkko {
             int bVanhempi = etsi(vanhempi, kaari.getLoppu());
             if (aVanhempi != bVanhempi) {
                 poistaSeina(labyrintti, kaari.getAlku(), kaari.getLoppu());
-                System.out.print(kaari.getAlku() + " ");
-                System.out.println(kaari.getLoppu());
                 yhdista(vanhempi, aVanhempi, bVanhempi);
             }
             indeksi++;
@@ -58,10 +56,6 @@ public class Verkko {
         return labyrintti;
     }
 
-    public ArrayList<Kaari> getKaaret() {
-        return kaaret;
-    }
-            
     /**
      * Etsii annetun solmun juuren
      * @param vanhempi
