@@ -11,7 +11,8 @@ Kloonaa repositorio omalle koneellesi
 Ohjelman toimivuus testattu linux-käyttöjärjestelmällä. Gradle komento saattaa olla eri toisillä käyttöjärjestelmillä.
 
 1. Mene repositorioon jossa ohjelma sijaitsee. Rakenna projekti
-   `./gradlew build`
+   `./gradlew build`   
+   Jar tiedosto löytyy polusta `/build/libs/Labyrintit.jar`
 
 2. Ohjelman ajaminen onnistuu komennolla   
    `./gradlew run`
