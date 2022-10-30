@@ -61,3 +61,4 @@ public class SatunnainenKruskalTest {
         haku(x, y - 1, labyrintti, vierailtu);
     }
 }
+
