@@ -8,11 +8,25 @@ Kloonaa repositorio omalle koneellesi
    
 ## Ohjelman suorittaminen
 
-Mene repositorioon jossa ohjelma sijaitsee. Ohjelman ajaminen onnistuu komennolla   
+Ohjelman toimivuus testattu linux-käyttöjärjestelmällä. Gradle komento saattaa olla eri toisillä käyttöjärjestelmillä.
+
+1. Mene repositorioon jossa ohjelma sijaitsee. Rakenna projekti
+   `./gradlew build`
+
+2. Ohjelman ajaminen onnistuu komennolla   
    `./gradlew run`
 
-Testit suoritetaan komennolla   
+
+3. Testit suoritetaan komennolla   
    `./gradlew test`
+   
+4. Testikattavuusraportti luodaan komennolla   
+   `./gradlew test jacocoTestReport`   
+   Raportti löytyy polusta `build/reports/jacoco/test/html/index.html`
+
+5. Javadoc luodaan komennolla   
+   `./gradlew javadoc`   
+   Dokumentti löytyy polusta `build/docs/javadoc/index.html`
    
    
 ## Tekstikäyttöliittymän käyttäminen
