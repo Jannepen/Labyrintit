@@ -15,6 +15,7 @@ public class SatunnainenKruskal {
      * Alustaa ruudukon labyrintin tekoa varten, jonka jälkeen seiniä poistamalla luo labyrintin
      * @param x
      * @param y
+     * @return palauttaa lopullisen labyrintin
      */
     public int[][] luoLabyrintti(int x, int y) {
         int solujenMaara = x*y;
@@ -26,6 +27,8 @@ public class SatunnainenKruskal {
         Verkko verkko = new Verkko(solujenMaara);
         
         int luku = 0;
+        
+        //Luodaan kaikki labyrintin seinät, eli kaaret
         for (int j = 1; j < y + 1; j++) {
             for (int i = 1; i < x + 1; i++) {
                 if (i != x) {
@@ -41,6 +44,11 @@ public class SatunnainenKruskal {
         
         return labyrintti;
     }
+    
+    /**
+     * Luo solut visualisoitavaan labyrinttiin
+     * @param labyrintti
+     */
     
     public int[][] alustaLabyrintti(int[][] labyrintti) {
         

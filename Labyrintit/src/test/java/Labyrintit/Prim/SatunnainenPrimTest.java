@@ -84,6 +84,7 @@ public class SatunnainenPrimTest {
         assertEquals(true, taulukko[loppuX][labyrintti.length - 2]);
     }
     
+    //palauttaa taulukon, jonka reitti tarkistettu syvyyshaulla
     private boolean[][] luoTotuusTaulukko(int[][] labyrintti, int x, int y) {
         
         boolean[][] vierailtu = new boolean[labyrintti.length][labyrintti.length];
@@ -93,6 +94,7 @@ public class SatunnainenPrimTest {
         return vierailtu;
     }
     
+    //syvyyshaku
     private void haku(int x, int y, int[][] labyrintti, boolean[][] vierailtu) {
         if (x < 0 || y < 0 || x >= vierailtu.length || y >= vierailtu.length) {
             return;

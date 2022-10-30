@@ -36,7 +36,7 @@ public class SatunnainenKruskalTest {
         assertEquals(true, taulukko[0][taulukko.length - 1]);
     }
     
-    
+    //palauttaa taulukon, jonka reitti tarkistettu syvyyshaulla
     private boolean[][] luoTotuusTaulukko(int[][] labyrintti) {
         
         boolean[][] vierailtu = new boolean[labyrintti.length][labyrintti.length];
@@ -46,6 +46,7 @@ public class SatunnainenKruskalTest {
         return vierailtu;
     }
     
+    //syvyyshaku
     private void haku(int x, int y, int[][] labyrintti, boolean[][] vierailtu) {
         if (x < 0 || y < 0 || x >= vierailtu.length || y >= vierailtu.length) {
             return;

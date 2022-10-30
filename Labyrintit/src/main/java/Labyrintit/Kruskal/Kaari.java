@@ -1,6 +1,11 @@
 
 package Labyrintit.Kruskal;
 
+/**
+ * Kaaria kuvaava luokka
+ * @author jannepen
+ */
+
 public class Kaari {
     private int alku;
     private int loppu;

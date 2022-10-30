@@ -4,10 +4,19 @@ package Labyrintit.Kruskal;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Verkkoa kuvaava luokka
+ * @author jannepen
+ */
 
 public class Verkko {
     private int solujenMaara;
     private ArrayList<Kaari> kaaret;
+    
+    /**
+     * Konstruktori alustaa labyrintin koon ja kaarilistan
+     * @param solut 
+     */
             
     public Verkko(int solut) {
         this.solujenMaara = solut;
@@ -27,6 +36,8 @@ public class Verkko {
         Random random = new Random();
                 
         int indeksi = 0;
+        
+        // Käy läpi kaaria ja poistaa seiniä niin kauan kuin kaaria on jäljellä
         while (!kaaret.isEmpty()) {
             int randomKaari = random.nextInt(kaaret.size());
             Kaari kaari = kaaret.remove(randomKaari);
@@ -42,6 +53,14 @@ public class Verkko {
         return labyrintti;
     }
             
+    /**
+     * Poistaa seinän (eli luo reitin) kahden solun välille visualisoidussa labyrintissa
+     * @param labyrintti
+     * @param alku
+     * @param loppu
+     * @return palauttaa labyrintin, jossa yksi uusi reitti
+     */
+    
     public int[][] poistaSeina(int[][] labyrintti, int alku, int loppu) {
         int koko = (labyrintti.length + 1) / 2;
         
